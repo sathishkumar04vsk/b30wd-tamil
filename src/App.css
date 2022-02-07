@@ -1,0 +1,135 @@
+body{
+  background-color: #a1a3a5;
+}
+.App {
+  font-family: sans-serif;
+  
+  margin-top: 0px !important;
+}
+img {
+  width: 340px;
+  height: 500px;
+  object-fit: cover;
+}
+.title{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.like-btn{
+  display: flex;
+  gap: 25px;
+  text-align: center;
+}
+/* .like-btn>button{
+  margin-bottom: 0;
+  font-size: 15px;
+  
+  /* background-image:linear-gradient(to right ,rgb(175, 177, 100),rgb(175, 177, 99)); */
+  /* border-radius: 10px; */
+   
+.like{
+  color: green;
+  font-size: 36px;
+}
+.dislike{
+  color:indianred;
+  font-size: 36px;
+}
+.movies{
+  width:340px;
+  height: min-content;
+}
+.lists{
+  display: flex;
+  gap:20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.moviename{
+  margin: 0;
+  font-size: 30px;
+}
+.inputs{
+  display: flex;
+  gap:15px;
+  
+  flex-direction: column;
+  height: 40px;
+}
+.text-center{
+  text-align: center;
+}
+.container{
+  height: 600px;
+  font-size: 25px;
+  color: rgb(121, 27, 27);
+}
+.fa-star{
+  color: rgb(255, 166, 0);
+}
+#outlined-basic{
+  background-color: white;
+}
+.colorgroup{
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.inputcontent{
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+  justify-content: center;
+}
+.game-box{
+  height: 160px;
+  width: 160px;
+  border:2px solid black; 
+  text-align: center;
+  font-size: 140px;
+  background-color: white;
+}
+.box-group{
+  display: flex;
+  flex-wrap: wrap;
+  width: 492px;
+}
+.board{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ul{
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+.nav-items{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  height: 56px;
+  background-color: rgba(132, 49, 209, 0.555);
+}
+.logo{
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+a{
+  text-decoration: none;
+  font-size: 18px;
+}
+a:hover{
+  color: rgba(17, 184, 92, 0.582);
+  text-decoration: underline 3px rgb(7, 7, 134);
+}

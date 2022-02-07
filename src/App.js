@@ -5,35 +5,21 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Movieslist } from "./Movieslist";
 import { BrowserRouter as Router, Redirect } from "react-router-dom";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { Addcolor } from "./Addcolor";
 import { green, red } from "@mui/material/colors";
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import IconButton from '@mui/material/IconButton';
+import { Navbar } from "./Navbar";
 
 export default function App() {
   return (
     <div className="App">
     
       <Router>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/Movies">Movies</Link>
-        </li>
-        <li>
-          <Link to="/Color_game">Color Game</Link>
-        </li>
-        <li>
-          <Link to="/tic_tac_tce">Tic Tac Toe</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-      </ul>
-      <hr />
+      {Navbar()}
         <Switch>
           <Route path="/" exact><h1 className="home">sample application</h1></Route>
           <Route path="/flims"><Redirect to="/Movies"></Redirect></Route>
@@ -229,10 +215,14 @@ function TicTacToe(){
   return(
     <div className="board">
     <div className="box-group">
-      <Confetti width={width} height={height} />
+     {Winner ? <Confetti width={width} height={height} />:" " }
        {board.map((val,index)=><GameBox val={val} onPlayerClick={()=>handleClick(index)}/>)}
     </div>
-    <h2>Winner is: {Winner}</h2>
+   {Winner?alert(`Winner is: ${Winner}`): " "}
+   <h2>Winner is: {Winner}</h2>
+    <IconButton color="primary" onClick={()=>setBoard([null,null,null,null,null,null,null,null,null])}>
+    <RestartAltIcon />
+    </IconButton>
     </div>
   );
 }
