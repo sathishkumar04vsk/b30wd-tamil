@@ -25,7 +25,7 @@ export function Movieslist({ poster, moviename, summary, Rating }) {
           <h4 className="moviename">{moviename}</h4>
           <IconButton value="android" onClick={() => setShow(!show)}>{show?<ExpandLessIcon/>:<ExpandMoreIcon/>}</IconButton>
           <h4 style={style} className="rating"><i class="fa fa-star rate fa-2x" aria-hidden="true"></i>  {Rating}/10</h4>
-        </div>
+        </div>  
       
         {show ? <p className="summary"><b>Summary: </b>{summary}</p> : null}
         <CardActions className="like-btn">

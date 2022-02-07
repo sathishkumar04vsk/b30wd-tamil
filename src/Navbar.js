@@ -14,7 +14,7 @@ export function Navbar() {
     <li>
       <Link to="/Color_game">Color Game</Link>
     </li>
-    <li>
+    <li>  
       <Link to="/tic_tac_tce">Tic Tac Toe</Link>
     </li>
     <li>
