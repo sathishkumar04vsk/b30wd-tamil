@@ -10,7 +10,7 @@ import CardContent from '@mui/material/CardContent';
 import InfoIcon from '@mui/icons-material/Info';
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-export function Movieslist({ poster, moviename, summary, Rating,deleteButton,id }) {
+export function Movieslist({ poster, moviename, summary, Rating,deleteButton,editButton,id }) {
   const [like, setLike] = useState(0);
   const [dislike, setDislike] = useState(0);
   const style = {
@@ -44,6 +44,7 @@ export function Movieslist({ poster, moviename, summary, Rating,deleteButton,id 
             </Badge>
           </IconButton>
           {deleteButton}
+          {editButton}
         </CardActions>
         </CardContent>
       </Card>

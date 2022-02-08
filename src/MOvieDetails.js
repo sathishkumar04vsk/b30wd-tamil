@@ -1,5 +1,8 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
+import Button from "@mui/material/Button";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export function MOvieDetails({ movielist }) {
   const { id } = useParams();
@@ -13,6 +16,7 @@ export function MOvieDetails({ movielist }) {
   //   trailer: "https://www.youtube.com/embed/f_vbAtFSEc0",
   // };
   const movie = movielist[id];
+  const history = useHistory();
   return (
     <div>
       <iframe
@@ -28,13 +32,19 @@ export function MOvieDetails({ movielist }) {
         <div class="title">
           <h4 className="moviename">{movie.name}</h4>
           <h4 className="rating">
-            <i class="fa fa-star rate fa-2x" aria-hidden="true"></i> {movie.rating}/10
+            <i class="fa fa-star rate fa-2x" aria-hidden="true"></i>{" "}
+            {movie.rating}/10
           </h4>
         </div>
         <p className="summary">
           <b>Summary: </b>
           {movie.summary}
         </p>
+        <Button variant="contained" 
+                onClick={()=> history.goBack()}
+                startIcon={<ArrowBackIosIcon />}>
+          Back
+        </Button>
       </div>
     </div>
   );

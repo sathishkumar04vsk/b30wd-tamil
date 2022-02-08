@@ -10,6 +10,7 @@ import { NotFound } from "./NotFound";
 import { useState } from "react";
 import { MOvieDetails } from "./MOvieDetails";
 import { AddMovie } from "./AddMovie";
+import { EditMovie } from "./EditMovie";
 
 export default function App() {
   const Initial_movies = [
@@ -97,6 +98,7 @@ export default function App() {
             <Redirect to="/Movies/"></Redirect>
           </Route>
           <Route path="/Movies"  exact> <Movies movielist={movielist} setMovieList={setMovieList} /></Route>
+          <Route path="/Movies/edit/:id" exact><EditMovie movielist={movielist} setMovieList={setMovieList}/></Route>
           <Route path="/Movies/:id" exact> <MOvieDetails movielist={movielist} /></Route>
           <Route path="/movie/add" exact><AddMovie movielist={movielist} setMovieList={setMovieList}/></Route>
           <Route path="/Color_game" exact component={Addcolor}></Route>
