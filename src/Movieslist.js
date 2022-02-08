@@ -27,7 +27,7 @@ export function Movieslist({ poster, moviename, summary, Rating,deleteButton,id 
         <div className="title">
           <h4 className="moviename">{moviename}</h4>
           <IconButton value="android" color="primary" onClick={() => setShow(!show)}>{show?<ExpandLessIcon/>:<ExpandMoreIcon/>}</IconButton>
-          <IconButton color="primary" value="android" onClick={() => history.push("/Movies")}><InfoIcon /></IconButton>
+          <IconButton color="primary" value="android" onClick={() => history.push(`/Movies/${id}`)}><InfoIcon /></IconButton>
           <h4 style={style} className="rating"><i class="fa fa-star rate fa-2x" aria-hidden="true"></i>  {Rating}/10</h4>
         </div>  
       
