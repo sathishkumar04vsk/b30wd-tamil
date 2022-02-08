@@ -22,7 +22,7 @@ export function Movieslist({ poster, moviename, summary, Rating,deleteButton,id 
   return (
   
       <Card className="movies">
-        <img src={poster} alt="Poster_pic" />
+        <img className="poster" src={poster} alt="Poster_pic" />
         <CardContent>
         <div className="title">
           <h4 className="moviename">{moviename}</h4>

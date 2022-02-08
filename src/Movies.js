@@ -7,7 +7,7 @@ export function Movies({movielist,setMovieList}) {
 
   
   return (
-    <div>
+    <div className="movie-container">
       
       <div className="lists">
         {movielist.map(({ poster, name, summary, rating }, index) => (

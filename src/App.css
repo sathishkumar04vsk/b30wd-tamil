@@ -6,7 +6,7 @@ body{
   
   margin-top: 0px !important;
 }
-img {
+.poster {
   width: 340px;
   height: 500px;
   object-fit: cover;
@@ -149,4 +149,11 @@ iframe{
 }
 .MuiInputBase-input{
   border-radius: 5px;
+}
+.images-not-found{
+  width: 100%;
+  
+}
+.movie-container{
+  margin-top: 5%;
 }

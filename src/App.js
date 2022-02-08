@@ -12,7 +12,7 @@ import { MOvieDetails } from "./MOvieDetails";
 import { AddMovie } from "./AddMovie";
 
 export default function App() {
-  var Initial_movies = [
+  const Initial_movies = [
     {
       name: "RRR",
       poster:
@@ -91,14 +91,14 @@ export default function App() {
         {Navbar()}
         <Switch>
           <Route path="/" exact>
-            <h1 className="home">sample</h1>
+            <h1 className="home">Sample Application</h1>
           </Route>
           <Route path="/flims">
             <Redirect to="/Movies/"></Redirect>
           </Route>
           <Route path="/Movies"  exact> <Movies movielist={movielist} setMovieList={setMovieList} /></Route>
           <Route path="/Movies/:id" exact> <MOvieDetails movielist={movielist} /></Route>
-          <Route path="/Movie/add" ><AddMovie movielist={movielist} setMovieList={setMovieList}/></Route>
+          <Route path="/movie/add" exact><AddMovie movielist={movielist} setMovieList={setMovieList}/></Route>
           <Route path="/Color_game" exact component={Addcolor}></Route>
           <Route path="/tic_tac_tce" exact component={TicTacToe}></Route>
           <Route path="/about" exact></Route>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import * as React from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 export function AddMovie({ movielist, setMovieList }) {
@@ -10,6 +11,7 @@ export function AddMovie({ movielist, setMovieList }) {
   const [summary, setSummary] = useState("");
   const [rating, setRating] = useState("");
   const [trailer,setTrailer]=useState("");
+  const history = useHistory();
   return <div className="container">
     <h4 className="text-center">Add a New Movie</h4>
     <div className="inputs">
@@ -50,6 +52,7 @@ export function AddMovie({ movielist, setMovieList }) {
             trailer: trailer
           };
           setMovieList([...movielist, newMovie]);
+          history.push("/Movies")
         }}
       >
         Add Movie

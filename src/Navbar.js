@@ -12,7 +12,7 @@ export function Navbar() {
       <Link to="/Movies">Movies</Link>
     </li>
     <li>
-      <Link to="/Movie/add"> Add Movie</Link>
+      <Link to="/movie/add"> Add Movie</Link>
     </li>
     <li>
       <Link to="/Color_game">Color Game</Link>
