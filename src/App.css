@@ -55,7 +55,7 @@ img {
 .inputs{
   display: flex;
   gap:15px;
-  
+  align-items: center;
   flex-direction: column;
   height: 40px;
 }
@@ -136,4 +136,17 @@ a:hover{
 .not-found{
   text-align: center;
   font-size: 58px;
+}
+.movies-details{
+  max-width: 900px;
+  padding: 25px;
+}
+iframe{
+  margin-top: 50px;
+}
+.MuiTextField-root{
+  width:70%;
+}
+.MuiInputBase-input{
+  border-radius: 5px;
 }
