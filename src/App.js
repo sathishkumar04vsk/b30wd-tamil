@@ -14,7 +14,8 @@ import { EditMovie } from "./EditMovie";
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import { Mode } from "@mui/icons-material";
+
+
 
 export default function App() {
   const Initial_movies = [
@@ -97,7 +98,10 @@ export default function App() {
       trailer: "https://www.youtube.com/embed/NgsQ8mVkN8w",
     },
   ];
+
+
   const [mode,setMode]=useState("light");
+
    const [movielist, setMovieList] = useState(Initial_movies);
    const darkTheme = createTheme({
     palette: {
@@ -106,12 +110,13 @@ export default function App() {
   });
  
   return (
-    <ThemeProvider theme={darkTheme} value={Mode}>
+    <ThemeProvider theme={darkTheme} >
+   
       <Paper style={{boderRadius:"0px",minHeight:"100vh"}} elevation={0}>
       
       <div className="App">
         <Router>
-        <Navbar />
+        <Navbar mode={mode} setMode={setMode} />
           <Switch>
             <Route path="/" exact>
               <h1 className="home">Sample Application</h1>

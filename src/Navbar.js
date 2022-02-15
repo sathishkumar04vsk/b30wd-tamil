@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 
-export function Navbar() {
-  const value=[mode,setMode]
+export function Navbar({mode,setMode}) {
+  
   return <div className="nav-items">
       <img className="logo" src="https://i.pinimg.com/originals/1c/54/f7/1c54f7b06d7723c21afc5035bf88a5ef.png" alt="logo for Code Tech"></img>
    <ul className="links">
@@ -27,7 +29,7 @@ export function Navbar() {
       <Link to="/about">About</Link>
     </li>
   </ul>
-  <Button color="inherit">Dark Mode</Button>
+  <Button color="inherit" onClick={()=>setMode(mode==="light"?"dark":"light")} >{mode==="light"?<DarkModeIcon />:<LightModeIcon />} Mode</Button>
   
   </div>;
 }
