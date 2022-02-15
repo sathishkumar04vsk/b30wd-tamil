@@ -13,13 +13,23 @@ export function Movies() {
   const styles={marginLeft:"auto"};
   const history = useHistory(); 
   const [movielist,setMovieList] = useState([]);
-  useEffect(()=>{
+
+  const getMovies = ()=>{
     fetch(API,{
       method: "GET",
     })
     .then((data)=>data.json())
-    .then((mvs)=>setMovieList(mvs))
-  },[]);
+    .then((mvs)=>setMovieList(mvs));
+  }
+
+  useEffect(()=>getMovies(),[]);
+
+  const delectaction = (id)=>{
+    fetch(`API/${id}`,{
+      method: "DELECT",
+    })
+    .then(()=>getMovies())
+  };
   return (
     <div className="movie-container">
       
@@ -36,11 +46,7 @@ export function Movies() {
                 style={styles}
                 aria-label="delete"
                 size="large"
-                onClick={() => {
-                  const copyMovielist = [...movielist];
-                  copyMovielist.splice(index, 1);
-                  setMovieList(copyMovielist);
-                }}
+                onClick={delectaction}
               >
                 <DeleteIcon color="error" fontSize="inherit" />
               </IconButton>
