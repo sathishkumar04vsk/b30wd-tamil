@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 export function Movies({movielist,setMovieList}) {
-
+  const styles={marginLeft:"auto"};
   const history = useHistory();
   return (
     <div className="movie-container">
@@ -22,6 +22,7 @@ export function Movies({movielist,setMovieList}) {
             Rating={rating}
             deleteButton={
               <IconButton
+                style={styles}
                 aria-label="delete"
                 size="large"
                 onClick={() => {

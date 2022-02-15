@@ -8,7 +8,8 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import InfoIcon from '@mui/icons-material/Info';
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
+
 
 export function Movieslist({ poster, moviename, summary, Rating,deleteButton,editButton,id }) {
   const [like, setLike] = useState(0);

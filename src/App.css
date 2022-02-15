@@ -20,7 +20,7 @@ body{
 
 .like-btn{
   display: flex;
-  gap: 25px;
+  
   text-align: center;
 }
 /* .like-btn>button{
