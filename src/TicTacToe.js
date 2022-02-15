@@ -7,7 +7,8 @@ import IconButton from '@mui/material/IconButton';
 
 export function TicTacToe() {
   const [board, setBoard] = useState(
-    [null,
+    [
+      null,
       null,
       null,
       null,

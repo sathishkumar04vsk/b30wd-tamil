@@ -1,6 +1,4 @@
-body{
-  background-color: #a1a3a5;
-}
+
 .App {
   font-family: sans-serif;
   
@@ -117,7 +115,7 @@ ul{
   justify-content: space-between;
   padding: 20px;
   height: 56px;
-  background-color: rgba(132, 49, 209, 0.555);
+  background-color: rgba(13, 41, 197, 0.602);
 }
 .logo{
   width: 60px;
@@ -128,9 +126,10 @@ ul{
 a{
   text-decoration: none;
   font-size: 18px;
+  color:rgb(3, 29, 85)
 }
 a:hover{
-  color: rgba(17, 184, 92, 0.582);
+  color: rgba(226, 230, 28, 0.596);
   text-decoration: underline 3px rgb(7, 7, 134);
 }
 .not-found{

@@ -124,7 +124,7 @@ export default function App() {
             <Route path="/flims">
               <Redirect to="/Movies/"></Redirect>
             </Route>
-            <Route path="/Movies"  exact> <Movies movielist={movielist} setMovieList={setMovieList} /></Route>
+            <Route path="/Movies"  exact> <Movies /></Route>
             <Route path="/Movies/edit/:id" exact><EditMovie movielist={movielist} setMovieList={setMovieList}/></Route>
             <Route path="/Movies/:id" exact> <MOvieDetails movielist={movielist} /></Route>
             <Route path="/movie/add" exact><AddMovie movielist={movielist} setMovieList={setMovieList}/></Route>
@@ -142,5 +142,4 @@ export default function App() {
     </ThemeProvider>
   );
 }
-
 

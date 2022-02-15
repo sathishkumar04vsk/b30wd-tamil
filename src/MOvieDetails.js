@@ -3,8 +3,12 @@ import { useParams } from "react-router-dom";
 import Button from "@mui/material/Button";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useEffect } from "react";
+import { useState } from "react";
 
-export function MOvieDetails({ movielist }) {
+const API="https://my-json-server.typicode.com/sathishkumar04vsk/fun-data/movies"
+
+export function MOvieDetails() {
   const { id } = useParams();
   // const movie={
   //   name: "RRR",
@@ -15,8 +19,15 @@ export function MOvieDetails({ movielist }) {
   //     "RRR is an upcoming Indian Telugu-language period action drama film directed by S. S. Rajamouli, and produced by D. V. V. Danayya of DVV Entertainments.",
   //   trailer: "https://www.youtube.com/embed/f_vbAtFSEc0",
   // };
-  const movie = movielist[id];
+  const [movie,setMovie] = useState([])
   const history = useHistory();
+  useEffect(()=>{
+    fetch(`${API}/${id}`,{
+      method:"GET",
+    })
+    .then((data)=>data.json())
+    .then((mv)=>setMovie(mv))
+  },[]);
   return (
     <div>
       <iframe

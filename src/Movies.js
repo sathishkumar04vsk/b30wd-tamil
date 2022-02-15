@@ -4,16 +4,27 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useEffect } from "react";
+import { useState } from "react";
 
+const API ="https://my-json-server.typicode.com/sathishkumar04vsk/fun-data/movies"
 
-export function Movies({movielist,setMovieList}) {
+export function Movies() {
   const styles={marginLeft:"auto"};
-  const history = useHistory();
+  const history = useHistory(); 
+  const [movielist,setMovieList] = useState([]);
+  useEffect(()=>{
+    fetch(API,{
+      method: "GET",
+    })
+    .then((data)=>data.json())
+    .then((mvs)=>setMovieList(mvs))
+  },[]);
   return (
     <div className="movie-container">
       
       <div className="lists">
-        {movielist.map(({ poster, name, summary, rating }, index) => (
+        {movielist.map(({ poster, name, summary, rating,id }, index) => (
           <Movieslist
             key={index}
             poster={poster}
@@ -43,7 +54,7 @@ export function Movies({movielist,setMovieList}) {
                 <EditIcon color="primary" fontSize="inherit" />
               </IconButton>
             }
-            id={index}
+            id={id}
           />
         ))}
       </div>

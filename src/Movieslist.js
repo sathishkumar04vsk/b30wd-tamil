@@ -11,6 +11,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import { useHistory } from "react-router-dom";
 
 
+
 export function Movieslist({ poster, moviename, summary, Rating,deleteButton,editButton,id }) {
   const [like, setLike] = useState(0);
   const [dislike, setDislike] = useState(0);
