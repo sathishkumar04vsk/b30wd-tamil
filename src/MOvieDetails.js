@@ -5,8 +5,9 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react";
 import { useState } from "react";
+import { API } from "./global";
 
-const API="https://my-json-server.typicode.com/sathishkumar04vsk/fun-data/movies"
+
 
 export function MOvieDetails() {
   const { id } = useParams();
@@ -22,7 +23,7 @@ export function MOvieDetails() {
   const [movie,setMovie] = useState([])
   const history = useHistory();
   useEffect(()=>{
-    fetch(`${API}/${id}`,{
+    fetch(`${API}/movies/${id}`,{
       method:"GET",
     })
     .then((data)=>data.json())

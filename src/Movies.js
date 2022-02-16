@@ -6,8 +6,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react";
 import { useState } from "react";
-
-const API ="https://my-json-server.typicode.com/sathishkumar04vsk/fun-data/movies"
+import { API } from "./global";
 
 export function Movies() {
   const styles={marginLeft:"auto"};
@@ -15,7 +14,7 @@ export function Movies() {
   const [movielist,setMovieList] = useState([]);
 
   const getMovies = ()=>{
-    fetch(API,{
+    fetch(`${API}/movies`,{
       method: "GET",
     })
     .then((data)=>data.json())
@@ -25,8 +24,8 @@ export function Movies() {
   useEffect(()=>getMovies(),[]);
 
   const delectaction = (id)=>{
-    fetch(`API/${id}`,{
-      method: "DELECT",
+    fetch(`${API}/movies/${id}`,{
+      method: "DELETE",
     })
     .then(()=>getMovies())
   };
@@ -46,7 +45,7 @@ export function Movies() {
                 style={styles}
                 aria-label="delete"
                 size="large"
-                onClick={delectaction}
+                onClick={()=>delectaction(id)}
               >
                 <DeleteIcon color="error" fontSize="inherit" />
               </IconButton>
