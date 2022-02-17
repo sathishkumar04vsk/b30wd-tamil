@@ -16,10 +16,9 @@ export function Movies() {
   const getMovies = ()=>{
     fetch(`${API}/movies`,{
       method: "GET",
-    })
-    .then((data)=>data.json())
-    .then((mvs)=>setMovieList(mvs));
+    }).then((data)=>data.json()).then((mvs)=>setMovieList(mvs))
   }
+  
 
   useEffect(()=>getMovies(),[]);
 
@@ -54,7 +53,7 @@ export function Movies() {
               <IconButton
                 aria-label="edit-button"
                 size="large"
-                onClick={() => history.push(`Movies/edit/${index}`)}
+                onClick={() => history.push(`Movies/edit/${id}`)}
               >
                 <EditIcon color="primary" fontSize="inherit" />
               </IconButton>

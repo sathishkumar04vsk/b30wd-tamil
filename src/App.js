@@ -125,14 +125,14 @@ export default function App() {
               <Redirect to="/Movies/"></Redirect>
             </Route>
             <Route path="/Movies"  exact> <Movies /></Route>
-            <Route path="/Movies/edit/:id" exact><EditMovie movielist={movielist} setMovieList={setMovieList}/></Route>
-            <Route path="/Movies/:id" exact> <MOvieDetails movielist={movielist} /></Route>
-            <Route path="/movie/add" exact><AddMovie movielist={movielist} setMovieList={setMovieList}/></Route>
+            <Route path="/Movies/edit/:id" exact><EditMovie /></Route>
+            <Route path="/Movies/:id" exact> <MOvieDetails /></Route>
+            <Route path="/movie/add" exact><AddMovie/></Route>
             <Route path="/Color_game" exact component={Addcolor}></Route>
             <Route path="/tic_tac_tce" exact component={TicTacToe}></Route>
             <Route path="/about" exact></Route>
             <Route path="**" exact>
-              {" "}
+                {" "}
               <NotFound />
             </Route>
           </Switch>
