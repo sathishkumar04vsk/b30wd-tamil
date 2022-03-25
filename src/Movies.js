@@ -9,30 +9,29 @@ import { useState } from "react";
 import { API } from "./global";
 
 export function Movies() {
-  const styles={marginLeft:"auto"};
-  const history = useHistory(); 
-  const [movielist,setMovieList] = useState([]);
+  const styles = { marginLeft: "auto" };
+  const history = useHistory();
+  const [movielist, setMovieList] = useState([]);
 
-  const getMovies = ()=>{
-    fetch(`${API}/movies`,{
+  const getMovies = () => {
+    fetch(`${API}/movies`, {
       method: "GET",
-    }).then((data)=>data.json()).then((mvs)=>setMovieList(mvs))
-  }
-  
-
-  useEffect(()=>getMovies(),[]);
-
-  const delectaction = (id)=>{
-    fetch(`${API}/movies/${id}`,{
-      method: "DELETE",
     })
-    .then(()=>getMovies())
+      .then((data) => data.json())
+      .then((mvs) => setMovieList(mvs));
+  };
+
+  useEffect(() => getMovies(), []);
+
+  const delectaction = (id) => {
+    fetch(`${API}/movies/${id}`, {
+      method: "DELETE",
+    }).then(() => getMovies());
   };
   return (
     <div className="movie-container">
-      
       <div className="lists">
-        {movielist.map(({ poster, name, summary, rating,id }, index) => (
+        {movielist.map(({ poster, name, summary, rating, _id }, index) => (
           <Movieslist
             key={index}
             poster={poster}
@@ -44,7 +43,7 @@ export function Movies() {
                 style={styles}
                 aria-label="delete"
                 size="large"
-                onClick={()=>delectaction(id)}
+                onClick={() => delectaction(_id)}
               >
                 <DeleteIcon color="error" fontSize="inherit" />
               </IconButton>
@@ -53,16 +52,15 @@ export function Movies() {
               <IconButton
                 aria-label="edit-button"
                 size="large"
-                onClick={() => history.push(`Movies/edit/${id}`)}
+                onClick={() => history.push(`Movies/edit/${_id}`)}
               >
                 <EditIcon color="primary" fontSize="inherit" />
               </IconButton>
             }
-            id={id}
+            id={_id}
           />
         ))}
       </div>
     </div>
   );
 }
-

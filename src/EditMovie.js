@@ -67,7 +67,7 @@ const EditMovieForm = ({ movie }) => {
     // 2.body-JSON data
     // 3.header-JSON data
     // After PUT complete - movie to /movies
-    fetch(`${API}/movies/${movie.id}`, {
+    fetch(`${API}/movies/${movie._id}`, {
       method: "PUT",
       body: JSON.stringify(updateMovie),
       headers: {
